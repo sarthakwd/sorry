@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>For my sweet girl</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Gaegu:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#e8e4ff; --bg2:#ffe3ee; --ink:#3a2850; --pink:#ff8fb8; --butter:#ffe27a; --mint:#b9ecd6; --sky:#bcd4ff;
+  --paper:#fffaf2;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#241a38; --bg2:#33203f; --ink:#f5ecff; --paper:#3a2c52;}
+}
+:root[data-theme="dark"]{--bg:#241a38; --bg2:#33203f; --ink:#f5ecff; --paper:#3a2c52;}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;min-height:100vh;background:linear-gradient(170deg,var(--bg),var(--bg2));color:var(--ink);font-family:'Gaegu','Comic Sans MS',cursive;font-size:1.35rem;line-height:1.45}
+main{max-width:680px;margin:0 auto;padding:2.5rem 1.25rem 4rem}
+h1{font-family:'Fredoka','Trebuchet MS',sans-serif;font-weight:600;font-size:clamp(2.4rem,9vw,3.8rem);line-height:1.05;margin:0 0 .6rem;transform:rotate(-1.5deg)}
+.sub{margin:0 0 2rem;max-width:30ch}
+.field{display:flex;flex-wrap:wrap;gap:.5rem 1rem;justify-content:center;min-height:300px;padding:1rem 0}
+.bubble{
+  appearance:none;border:0;cursor:pointer;font:inherit;color:var(--ink);text-align:center;
+  width:var(--s);height:var(--s);border-radius:50%;padding:1.1rem;
+  display:flex;align-items:center;justify-content:center;line-height:1.15;font-size:1.2rem;
+  background:radial-gradient(circle at 30% 25%,#fff9,transparent 40%),var(--c);
+  box-shadow:inset -6px -8px 14px #0001,0 8px 18px #3a285022;
+  animation:bob var(--d) ease-in-out infinite;margin-top:var(--m);
+  transition:transform .15s;
+}
+.bubble:hover{transform:scale(1.06)}
+.bubble:focus-visible{outline:3px solid var(--ink);outline-offset:4px}
+.bubble.pop{animation:pop .35s ease-out forwards;pointer-events:none}
+@keyframes bob{0%,100%{translate:0 0}50%{translate:0 -12px}}
+@keyframes pop{40%{transform:scale(1.25)}100%{transform:scale(1.5);opacity:0;visibility:hidden}}
+.hint{text-align:center;margin:.5rem 0 1.5rem;opacity:.8}
+.notes{display:grid;gap:1rem;margin:0 0 2rem}
+.note{background:var(--paper);padding:1rem 1.2rem;border-radius:6px 20px 8px 18px;box-shadow:3px 4px 0 var(--ink);transform:rotate(var(--r));animation:in .4s ease-out}
+.note b{font-family:'Fredoka',sans-serif;font-weight:500;display:block;margin-bottom:.15rem}
+@keyframes in{from{opacity:0;transform:rotate(var(--r)) scale(.9)}}
+#letter{display:none;background:var(--paper);border-radius:22px 8px 24px 10px;padding:1.6rem 1.5rem 1.4rem;box-shadow:5px 6px 0 var(--pink);transform:rotate(.8deg)}
+#letter.show{display:block;animation:in .6s ease-out}
+#letter h2{font-family:'Fredoka',sans-serif;font-weight:600;font-size:1.9rem;margin:0 0 .6rem}
+#letter p{margin:0 0 .9rem}
+.sign{text-align:right;margin:1.2rem 0 0!important}
+.small{font-size:1rem;opacity:.7;text-align:center;margin-top:2rem}
+@media (prefers-reduced-motion:reduce){.bubble{animation:none}.bubble.pop{animation:none;visibility:hidden}.note,#letter.show{animation:none}}
+</style>
+</head>
+<body>
+<main>
+  <h1>Hey, sweet girl.</h1>
+  <p class="sub">I made you something. Pop the bubbles, they're full of things I never want to forget to tell you.</p>
+
+  <div class="field" id="field">
+    <button class="bubble" style="--s:170px;--c:var(--pink);--d:4s;--m:10px" data-t="You forgive me, every time" data-b="Every single time. I never want to treat that like it's free. It's a gift, and I know it.">Pehle yahan click Karo beta..</button>
+    <button class="bubble" style="--s:150px;--c:var(--butter);--d:5s;--m:70px" data-t="Your bubbly, full-of-life self" data-b="You walk in and everything gets lighter. I want to be the reason that stays, not the reason it dims.">ab yahan...</button>
+    <button class="bubble" style="--s:160px;--c:var(--mint);--d:4.5s;--m:0" data-t="You let the bad things go" data-b="You forget my worst moments quickly and you never taunt me for them. That's rare, and I notice it.">ab yahan sweettheearrttt..</button>
+  </div>
+  <p class="hint" id="hint">tap a bubble</p>
+
+  <div class="notes" id="notes"></div>
+
+  <section id="letter" aria-live="polite">
+    <h2>Okay, now the real part.</h2>
+    <p>I'm sorry. For the misunderstandings, for overreacting, and for overdoing things when I should have just slowed down and actually listen to you my love.</p>
+    <p>I hurt you,i misunderstood and that's on me. No excuses baby.</p>
+    <p>I'd rather talk it through with you than be right. i don't want to be right if it means hurting you baby. Whenever you're ready, I'm here.</p>
+    <p class="sign">Yours, the guy who is working on his overreacting hehe</p>
+  </section>
+
+  <p class="small">I'm a developer, so I wrote this myself instead of buying a card. It has bugs(so does my mind). I'm fixing them(my mistakes as well).</p>
+</main>
+<script>
+(function(){
+  var bubbles=[].slice.call(document.querySelectorAll('.bubble'));
+  var notes=document.getElementById('notes'), hint=document.getElementById('hint'), letter=document.getElementById('letter');
+  var rots=['-1.5deg','1.2deg','-.8deg'], left=bubbles.length, i=0;
+  bubbles.forEach(function(b){
+    b.addEventListener('click',function(){
+      b.classList.add('pop');
+      var n=document.createElement('div'); n.className='note'; n.style.setProperty('--r',rots[i++%3]);
+      var t=document.createElement('b'); t.textContent=b.dataset.t;
+      n.appendChild(t); n.appendChild(document.createTextNode(b.dataset.b));
+      notes.appendChild(n);
+      left--;
+      hint.textContent=left?left+' left':'';
+      if(!left){
+        setTimeout(function(){letter.classList.add('show');letter.scrollIntoView({behavior:'smooth',block:'center'});},500);
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>
